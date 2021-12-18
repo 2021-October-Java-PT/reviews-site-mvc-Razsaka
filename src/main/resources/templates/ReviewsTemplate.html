@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"></link>
+    <title>Review Albums</title>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <section>
+            <button>
+                <a th:href="@{/}">Home</a>
+            </button>
+        </section>
+    </nav>
+    <main>
+        <h1>Review Albums</h1>
+        <table>
+            <tr>
+                <td>Review Name</td>
+            </tr>
+            <tr th:each="review : ${reviewsModel}">
+                <td>
+                    <a th:href="@{/reviews/{id}(id=${review.id})}"
+                       th:text="${review.title}"></a>
+
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <small>&copy; Razak Saka 2021</small>
+    </footer>
+</div>
+</body>
+</html>
